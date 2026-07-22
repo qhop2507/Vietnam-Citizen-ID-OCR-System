@@ -1,4 +1,6 @@
+<p align="center">
 # 🇻🇳 Vietnam Citizen ID OCR System
+</p>
 
 <p align="center">
 </p>
