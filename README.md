@@ -1,9 +1,6 @@
 # 🇻🇳 Vietnam Citizen ID OCR System
 
 <p align="center">
-
-<img src="assets/demo.png" width="1000"/>
-
 </p>
 
 <p align="center">
