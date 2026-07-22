@@ -13,9 +13,6 @@ uploads/
 # AI Models
 app/models/*.pt
 app/models/*.pth
-app/models/*.onnx
-app/models/*.pt
-app/models/*.pth
 # IDE
 .vscode/
 .idea/
