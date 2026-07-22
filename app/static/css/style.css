@@ -1,0 +1,253 @@
+/* ===========================
+   Global
+=========================== */
+
+body {
+    background: #f4f7fb;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1400px;
+}
+
+/* ===========================
+   Title
+=========================== */
+
+h2 {
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+/* ===========================
+   Card
+=========================== */
+
+.card {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+.card-header {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 14px 18px;
+}
+
+/* ===========================
+   Preview Image
+=========================== */
+
+.preview-image {
+
+    width: 100%;
+
+    height: 360px;
+
+    object-fit: contain;
+
+    border: 2px dashed #d5d5d5;
+
+    border-radius: 10px;
+
+    background: white;
+
+    padding: 10px;
+}
+
+/* ===========================
+   Face
+=========================== */
+
+.face-image {
+
+    width: 220px;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 2px solid #dee2e6;
+
+    background: white;
+}
+
+/* ===========================
+   Table
+=========================== */
+
+.table {
+
+    margin-bottom: 0;
+}
+
+.table th {
+
+    width: 220px;
+
+    background: #f8f9fa;
+
+    vertical-align: middle;
+
+    font-weight: 600;
+}
+
+.table td {
+
+    vertical-align: middle;
+
+    word-break: break-word;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.btn {
+
+    border-radius: 10px;
+
+    padding: 10px 20px;
+
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.btn:hover {
+
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   File Input
+=========================== */
+
+input[type=file] {
+
+    cursor: pointer;
+}
+
+/* ===========================
+   Loading
+=========================== */
+
+#loading {
+
+    margin-top: 25px;
+}
+
+.spinner-border {
+
+    width: 3rem;
+
+    height: 3rem;
+}
+
+/* ===========================
+   Image Animation
+=========================== */
+
+.preview-image,
+.face-image {
+
+    transition: .3s;
+}
+
+.preview-image:hover,
+.face-image:hover {
+
+    transform: scale(1.02);
+}
+
+/* ===========================
+   Result Highlight
+=========================== */
+
+.table td {
+
+    color: #0d6efd;
+
+    font-weight: 500;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 992px) {
+
+    .preview-image {
+
+        height: 260px;
+    }
+
+    .face-image {
+
+        width: 180px;
+
+        height: 220px;
+    }
+
+    .table th {
+
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    h2 {
+
+        font-size: 24px;
+    }
+
+    .preview-image {
+
+        height: 220px;
+    }
+
+    .face-image {
+
+        width: 150px;
+
+        height: 190px;
+    }
+
+    .btn {
+
+        width: 100%;
+
+        margin-bottom: 10px;
+    }
+}
+
+/* ===========================
+   Empty Image
+=========================== */
+
+.preview-image[src=""],
+.face-image[src=""] {
+
+    opacity: .35;
+}
+
+/* ===========================
+   Smooth
+=========================== */
+
+* {
+
+    scroll-behavior: smooth;
+}
