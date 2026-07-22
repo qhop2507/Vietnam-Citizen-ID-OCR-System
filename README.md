@@ -1,111 +1,101 @@
-<h1 align="center">
-🇻🇳 Vietnam Citizen ID OCR System
-</h1>
+# 🇻🇳 Vietnam Citizen ID OCR System
 
 <p align="center">
-<b>End-to-End AI-powered Vietnamese Citizen ID Card Recognition System</b>
-</p>
 
-<p align="center">
-An intelligent OCR framework for Vietnamese Citizen Identification Cards (CCCD),
-combining <b>YOLO11 Segmentation</b>, <b>Perspective Transformation</b>,
-<b>YOLO11 Detection</b>, <b>VietOCR</b>, and <b>FastAPI</b> to automatically
-detect, rectify, recognize, and extract structured information from ID cards.
+<img src="assets/demo.png" width="1000"/>
+
 </p>
 
 <p align="center">
 
-<img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white">
+A FastAPI-based OCR system for Vietnamese Citizen ID Cards using <b>YOLO11</b>, <b>VietOCR</b>, <b>OpenCV</b>, and <b>QR Decoder</b>.
 
-<img src="https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C?logo=pytorch&logoColor=white">
+</p>
 
-<img src="https://img.shields.io/badge/YOLO11-Ultralytics-8A2BE2">
+<p align="center">
 
+<img src="https://img.shields.io/badge/Python-3.10-blue?logo=python">
+<img src="https://img.shields.io/badge/FastAPI-0.115-green?logo=fastapi">
+<img src="https://img.shields.io/badge/YOLO11-Ultralytics-red">
 <img src="https://img.shields.io/badge/VietOCR-OCR-orange">
-
-<img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?logo=opencv&logoColor=white">
-
-<img src="https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi&logoColor=white">
-
-<img src="https://img.shields.io/badge/License-MIT-yellow">
+<img src="https://img.shields.io/badge/OpenCV-4.x-blue">
+<img src="https://img.shields.io/badge/License-MIT-success">
 
 </p>
 
 ---
 
-## 📖 Overview
+# ✨ Features
 
-Vietnam Citizen ID OCR System is an end-to-end computer vision pipeline that automatically extracts information from Vietnamese Citizen Identification Cards (CCCD).
-
-The system leverages modern deep learning techniques for document understanding, including card segmentation, geometric correction, information field detection, optical character recognition, QR code decoding, and structured data extraction.
-
----
-
-## ✨ Features
-
-- 🇻🇳 Vietnamese Citizen ID Card Recognition
-- 📄 Automatic Card Detection
-- ✂️ Card Segmentation
-- 📐 Perspective Correction
-- 🔍 Information Field Detection
-- 🤖 OCR using VietOCR
-- 🔳 QR Code Recognition
-- 👤 Face Image Extraction
-- 📦 JSON Output
-- 🌐 FastAPI Web Application
-- ⚡ High-speed Inference
+- 📷 Upload Vietnamese Citizen ID images
+- 🎯 Detect and crop ID card using YOLO11 Segmentation
+- 📐 Perspective Transformation
+- 📝 Detect information fields using YOLO11 Detection
+- 👤 Extract portrait photo automatically
+- 🔤 OCR using VietOCR
+- 🔍 Decode QR Code
+- 📄 Return structured JSON results
+- 🌐 Beautiful Bootstrap Web Interface
+- ⚡ FastAPI REST API
 
 ---
 
-## 🏗️ System Pipeline
+# 🏗 System Pipeline
 
 ```text
-                Input Image
+Input Image
+      │
+      ▼
+YOLO11 Card Segmentation
+      │
+      ▼
+Perspective Transform
+      │
+      ▼
+YOLO11 Field Detection
+      │
+      ├──────────────┐
+      ▼              ▼
+Portrait Crop     Information Fields
                      │
                      ▼
-      YOLO11 Card Segmentation
+                 VietOCR
                      │
                      ▼
-      Perspective Transformation
+                QR Decoder
                      │
                      ▼
-      YOLO11 Field Detection
+               Post Processing
                      │
                      ▼
-      Crop Information Fields
-                     │
-        ┌────────────┴────────────┐
-        ▼                         ▼
-   VietOCR                 QR Decoder
-        │                         │
-        └────────────┬────────────┘
-                     ▼
-             Post Processing
-                     │
-                     ▼
-              Structured JSON
+              JSON Response + UI
 ```
 
 ---
 
-## 🛠️ Technologies
+# 📸 Demo
 
-| Category | Technology |
-|-----------|------------|
-| Backend | FastAPI |
-| Detection | YOLO11 |
-| OCR | VietOCR |
-| Image Processing | OpenCV |
-| Deep Learning | PyTorch |
-| Language | Python |
-| Deployment | Uvicorn |
+<p align="center">
+
+<img src="assets/demo.png" width="1000"/>
+
+</p>
+
+The system automatically:
+
+- Detects the ID card
+- Performs perspective correction
+- Extracts the portrait photo
+- Recognizes all information fields
+- Decodes QR Code
+- Displays structured results
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
-Vietnam-Citizen-ID-OCR-System
+Ocr_cccd
 │
 ├── app
 │   ├── models
@@ -113,11 +103,14 @@ Vietnam-Citizen-ID-OCR-System
 │   ├── static
 │   ├── templates
 │   ├── config.py
-│   ├── main.py
-│   └── schemas.py
+│   └── main.py
+│
+├── assets
+│   └── demo.png
 │
 ├── uploads
 ├── output
+│
 ├── requirements.txt
 ├── run.py
 └── README.md
@@ -125,21 +118,23 @@ Vietnam-Citizen-ID-OCR-System
 
 ---
 
-## 🚀 Installation
+# 🚀 Installation
 
-### Clone Repository
+Clone repository
 
 ```bash
-git clone https://github.com/your_username/Vietnam-Citizen-ID-OCR-System.git
+git clone https://github.com/qhop2507/Vietnam-Citizen-ID-OCR-System.git
 
 cd Vietnam-Citizen-ID-OCR-System
 ```
 
-### Create Virtual Environment
+Create virtual environment
 
 ```bash
 python -m venv .venv
 ```
+
+Activate
 
 Windows
 
@@ -147,13 +142,13 @@ Windows
 .venv\Scripts\activate
 ```
 
-Linux / macOS
+Linux
 
 ```bash
 source .venv/bin/activate
 ```
 
-### Install Dependencies
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -161,16 +156,28 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Run
+# 📥 Download Models
+
+Place pretrained models into
+
+```text
+app/models/
+```
+
+Required models
+
+```text
+card_seg.pt
+field_detector.pt
+vgg_transformer.pth
+```
+
+---
+
+# ▶️ Run
 
 ```bash
 python run.py
-```
-
-or
-
-```bash
-uvicorn app.main:app --reload
 ```
 
 Open
@@ -179,60 +186,81 @@ Open
 http://127.0.0.1:8000
 ```
 
-Swagger
+---
+
+# 📦 API
+
+### OCR
 
 ```
-http://127.0.0.1:8000/docs
+POST /ocr
+```
+
+Request
+
+```
+multipart/form-data
+```
+
+Field
+
+```
+image
+```
+
+Response
+
+```json
+{
+  "success": true,
+  "card_image": "...",
+  "face_image": "...",
+  "data": {
+    "id": "...",
+    "name": "...",
+    "dob": "...",
+    "gender": "...",
+    "nationality": "...",
+    "origin_place": "...",
+    "current_place": "...",
+    "expire_date": "...",
+    "qr": "..."
+  }
+}
 ```
 
 ---
 
-## 📊 Supported Information
+# 🛠 Technologies
 
-- Citizen ID Number
-- Full Name
-- Date of Birth
-- Gender
-- Nationality
-- Place of Origin
-- Current Residence
-- Issue Date
-- Expiry Date
-- Face Image
-- QR Code
+- Python
+- FastAPI
+- OpenCV
+- Ultralytics YOLO11
+- VietOCR
+- PyTorch
+- Bootstrap 5
 
 ---
 
-## 📷 Demo
+# 📈 Future Improvements
 
-### Original Image
-
-> *(Add your demo image here)*
-
-↓
-
-### Recognition Result
-
-- Card Detection
-- Perspective Correction
-- OCR Result
-- Face Extraction
-- JSON Output
-
----
-
-## 📈 Future Improvements
-
-- Batch Processing
-- PDF Support
-- Docker Deployment
-- ONNX/TensorRT Inference
-- REST API Authentication
+- Support batch OCR
+- Docker deployment
+- ONNX/TensorRT inference
+- Mobile application
+- Export PDF & Excel
 - Multi-language OCR
-- Mobile Deployment
 
 ---
 
-## ⭐ If you find this project useful
+# 👨‍💻 Author
 
-Give this repository a ⭐ on GitHub.
+
+AI Engineer | Computer Vision | OCR | Deep Learning
+
+---
+
+# ⭐ If you like this project
+
+Give this repository a ⭐ Star.
