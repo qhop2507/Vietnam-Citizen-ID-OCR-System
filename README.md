@@ -13,12 +13,17 @@ A FastAPI-based OCR system for Vietnamese Citizen ID Cards using <b>YOLO11</b>, 
 
 <p align="center">
 
-<img src="https://img.shields.io/badge/Python-3.10-blue?logo=python">
-<img src="https://img.shields.io/badge/FastAPI-0.115-green?logo=fastapi">
-<img src="https://img.shields.io/badge/YOLO11-Ultralytics-red">
+<img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white">
+
+<img src="https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C?logo=pytorch&logoColor=white">
+
+<img src="https://img.shields.io/badge/YOLO11-Ultralytics-8A2BE2">
+
 <img src="https://img.shields.io/badge/VietOCR-OCR-orange">
-<img src="https://img.shields.io/badge/OpenCV-4.x-blue">
-<img src="https://img.shields.io/badge/License-MIT-success">
+
+<img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?logo=opencv&logoColor=white">
+
+<img src="https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi&logoColor=white">
 
 </p>
 
